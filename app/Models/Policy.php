@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class Policy extends Model
 {
     use HasFactory;
 
-    protected $table = 'blogs';
+    protected $table = 'policies';
     
     protected $fillable = [
-        'blog_category_id',
+        'policy_category_id',
         'name',
         'slug',
         'image',
@@ -22,6 +22,6 @@ class Blog extends Model
 
     public function category()
     {
-        return $this->belongsTo(BlogCategory::class, 'blog_category_id');
+        return $this->belongsTo(PolicyCategory::class, 'policy_category_id');
     }
 }
