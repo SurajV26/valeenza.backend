@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BlogCategory extends Model
+class PolicyCategory extends Model
 {
     use HasFactory;
 
-    protected $table = 'blog_categories';
+    protected $table = 'policy_categories';
 
     protected $fillable = [
         'name',
         'slug',
     ];
 
-    public function blogs()
+    public function policies()
     {
-        return $this->hasMany(Blog::class, 'blog_category_id');
+        return $this->hasMany(Policy::class, 'policy_category_id');
     }
 }
